@@ -9,5 +9,6 @@ void message(JNIEnv* jniEnv, LPCSTR message) {
 		, "showMessageDialog"
 		, "(Ljava/awt/Component;Ljava/lang/Object;)V");
 
-	jniEnv->CallVoidMethod(jOptionPaneClss, showMessageDialog, jniEnv->NewStringUTF(message));
+	jniEnv->CallVoidMethod(jOptionPaneClss, showMessageDialog, nullptr, jniEnv->NewStringUTF(message));
+
 }
